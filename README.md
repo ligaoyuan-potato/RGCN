@@ -1,2 +1,29 @@
-# RGCN
-congress objects four corners 
+功能：回归刚性目标的角点
+文件说明：
+data：存放模型，数据等
+data/images: 存放训练数据集图像
+data/label: 存放标签，其中train.txt是训练集，test.txt是测试集，格式参见文档
+data/model: 模型存放地址
+
+src:存放源代码
+train.py: 训练代码，参数可见程序注释
+demo.py:  预测代码，参数可见程序注释
+
+参数说明：
+'--img_dir'：图像训练集的路径
+'--train'：训练集类标文本文档的地址
+'--test'：测试集类标文本文档的地址
+'--model_dir'：模型存放地址
+'--batch_size'：训练批次大小，每次加载图像数
+'--lr'：学习率
+'--cnt_epochs'：训练集总迭代次数
+'--cnt_save'：训练多少迭代存储模型
+'--cnt_val'：训练多少迭代测试模型
+
+TODO：
+1. RGCN返回坐标值可能为负值，需添加处理；
+2. 前向输出已加入透视变换，可根据需要取舍；
+3. RGCN的输入和输出均为224*224，取原始结果请注意坐标变换；
+4. 现存储模型和测试模型均为每个迭代完全完成，可以考虑改为每个迭代没有跑完即可存储和测试。
+
+contact：li_gaoy@foxmail.com
